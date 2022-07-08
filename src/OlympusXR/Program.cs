@@ -7,7 +7,7 @@ if (!SK.Initialize(settings))
     Environment.Exit(1);
 
 /// <summary>
-/// Hand position in world space with information located on the left index finger.
+/// Provide information about your hand position in world space and present on your finger.
 /// </summary>
 void HandPosition(Handed hand, FingerId finger, JointId joint) {
     var p = Input.Hand(hand)[finger, joint].Pose;
@@ -15,7 +15,7 @@ void HandPosition(Handed hand, FingerId finger, JointId joint) {
 }
 
 SK.Run(() => {
-
+    // Left hand position with info provided on index finger
     HandPosition(Handed.Left, FingerId.Index, JointId.Tip);
 
     // Draw a cube
